@@ -150,6 +150,7 @@
 				TargetAttributes = {
 					324B603F1D33E43E0050B083 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -301,6 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yalantismobile.Segmentio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -320,6 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yalantismobile.Segmentio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
