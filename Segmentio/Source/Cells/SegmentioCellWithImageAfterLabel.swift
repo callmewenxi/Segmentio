@@ -26,43 +26,43 @@ final class SegmentioCellWithImageAfterLabel: SegmentioCell {
         
         // main constraints
         
-        let segmentImageViewVerticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[segmentImageView(labelHeight)]",
-            options: [.AlignAllCenterY],
+        let segmentImageViewVerticalConstraint = NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[segmentImageView(labelHeight)]",
+            options: [.alignAllCenterY],
             metrics: metrics,
             views: views)
-        NSLayoutConstraint.activateConstraints(segmentImageViewVerticalConstraint)
+        NSLayoutConstraint.activate(segmentImageViewVerticalConstraint)
         
-        let contentViewHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-            "|-[segmentTitleLabel]-[segmentImageView(labelHeight)]-|",
-            options: [.AlignAllCenterY],
+        let contentViewHorizontalConstraints = NSLayoutConstraint.constraints(
+            withVisualFormat: "|-[segmentTitleLabel]-[segmentImageView(labelHeight)]-|",
+            options: [.alignAllCenterY],
             metrics: metrics,
             views: views)
-        NSLayoutConstraint.activateConstraints(contentViewHorizontalConstraints)
+        NSLayoutConstraint.activate(contentViewHorizontalConstraints)
         
         // custom constraints
         
         topConstraint = NSLayoutConstraint(
             item: segmentTitleLabel,
-            attribute: .Top,
-            relatedBy: .Equal,
+            attribute: .top,
+            relatedBy: .equal,
             toItem: contentView,
-            attribute: .Top,
+            attribute: .top,
             multiplier: 1,
             constant: padding
         )
-        topConstraint?.active = true
+        topConstraint?.isActive = true
         
         bottomConstraint = NSLayoutConstraint(
             item: contentView,
-            attribute: .Bottom,
-            relatedBy: .Equal,
+            attribute: .bottom,
+            relatedBy: .equal,
             toItem: segmentTitleLabel,
-            attribute: .Bottom,
+            attribute: .bottom,
             multiplier: 1,
             constant: padding
         )
-        bottomConstraint?.active = true
+        bottomConstraint?.isActive = true
     }
     
 }

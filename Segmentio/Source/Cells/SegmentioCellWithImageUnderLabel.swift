@@ -26,50 +26,50 @@ class SegmentioCellWithImageUnderLabel: SegmentioCell {
         
         // main constraints
         
-        let segmentImageViewHorizontConstraint = NSLayoutConstraint.constraintsWithVisualFormat(
-            "|-[segmentImageView]-|",
+        let segmentImageViewHorizontConstraint = NSLayoutConstraint.constraints(
+            withVisualFormat: "|-[segmentImageView]-|",
             options: [],
             metrics: nil,
             views: views)
-        NSLayoutConstraint.activateConstraints(segmentImageViewHorizontConstraint)
+        NSLayoutConstraint.activate(segmentImageViewHorizontConstraint)
         
-        let segmentTitleLabelHorizontConstraint = NSLayoutConstraint.constraintsWithVisualFormat(
-            "|-[segmentTitleLabel]-|",
+        let segmentTitleLabelHorizontConstraint = NSLayoutConstraint.constraints(
+            withVisualFormat: "|-[segmentTitleLabel]-|",
             options: [],
             metrics: nil,
             views: views)
-        NSLayoutConstraint.activateConstraints(segmentTitleLabelHorizontConstraint)
+        NSLayoutConstraint.activate(segmentTitleLabelHorizontConstraint)
         
-        let contentViewVerticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[segmentTitleLabel(labelHeight)]-[segmentImageView]",
+        let contentViewVerticalConstraints = NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[segmentTitleLabel(labelHeight)]-[segmentImageView]",
             options: [],
             metrics: metrics,
             views: views)
-        NSLayoutConstraint.activateConstraints(contentViewVerticalConstraints)
+        NSLayoutConstraint.activate(contentViewVerticalConstraints)
         
         // custom constraints
         
         topConstraint = NSLayoutConstraint(
             item: segmentTitleLabel,
-            attribute: .Top,
-            relatedBy: .Equal,
+            attribute: .top,
+            relatedBy: .equal,
             toItem: contentView,
-            attribute: .Top,
+            attribute: .top,
             multiplier: 1,
             constant: padding
         )
-        topConstraint?.active = true
+        topConstraint?.isActive = true
         
         bottomConstraint = NSLayoutConstraint(
             item: contentView,
-            attribute: .Bottom,
-            relatedBy: .Equal,
+            attribute: .bottom,
+            relatedBy: .equal,
             toItem: segmentImageView,
-            attribute: .Bottom,
+            attribute: .bottom,
             multiplier: 1,
             constant: padding
         )
-        bottomConstraint?.active = true
+        bottomConstraint?.isActive = true
     }
     
 }
