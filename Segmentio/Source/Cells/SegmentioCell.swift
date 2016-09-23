@@ -22,7 +22,7 @@ class SegmentioCell: UICollectionViewCell {
     var cellSelected = false
     
     fileprivate var options = SegmentioOptions()
-    fileprivate var style = SegmentioStyle.ImageOverLabel
+    fileprivate var style: Style = .imageOverLabel
     fileprivate let verticalSeparatorLayer = CAShapeLayer()
     
     override var isHighlighted: Bool {
@@ -38,7 +38,7 @@ class SegmentioCell: UICollectionViewCell {
                 let defaultState = options.states.defaultState
                 let selectedState = options.states.selectedState
                 
-                if style.isWithText() {
+                if style.isWithText {
                     let highlightedTitleTextColor = cellSelected ? selectedState.titleTextColor : defaultState.titleTextColor
                     let highlightedTitleFont = cellSelected ? selectedState.titleFont : defaultState.titleFont
                     
@@ -56,12 +56,12 @@ class SegmentioCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        segmentImageView = UIImageView(frame: CGRect.zero)
+        segmentImageView = UIImageView(frame: .zero)
         if let segmentImageView = segmentImageView {
             contentView.addSubview(segmentImageView)
         }
         
-        segmentTitleLabel = UILabel(frame: CGRect.zero)
+        segmentTitleLabel = UILabel(frame: .zero)
         if let segmentTitleLabel = segmentTitleLabel {
             contentView.addSubview(segmentTitleLabel)
         }
@@ -85,9 +85,9 @@ class SegmentioCell: UICollectionViewCell {
         super.prepareForReuse()
         
         switch style {
-        case .OnlyLabel:
+        case .onlyLabel:
             segmentTitleLabel?.text = nil
-        case .OnlyImage:
+        case .onlyImage:
             segmentImageView?.image = nil
         default:
             segmentTitleLabel?.text = nil
@@ -97,7 +97,7 @@ class SegmentioCell: UICollectionViewCell {
     
     // MARK: - Configure
     
-    func configure(content: SegmentioItem, style: SegmentioStyle, options: SegmentioOptions, isLastCell: Bool) {
+    func configure(content: SegmentioItem, style: Style, options: SegmentioOptions, isLastCell: Bool) {
         self.options = options
         self.style = style
         setupContent(content: content)
@@ -119,7 +119,7 @@ class SegmentioCell: UICollectionViewCell {
         let selectedState = options.states.selectedState
         let defaultState = options.states.defaultState
         
-        if style.isWithText() {
+        if style.isWithText {
             segmentTitleLabel?.textColor = selected ? selectedState.titleTextColor : defaultState.titleTextColor
             segmentTitleLabel?.font = selected ? selectedState.titleFont : defaultState.titleFont
         }
@@ -132,12 +132,12 @@ class SegmentioCell: UICollectionViewCell {
     // MARK: - Private functions
     
     fileprivate func setupContent(content: SegmentioItem) {
-        if style.isWithImage() {
+        if style.isWithImage {
             segmentImageView?.contentMode = options.imageContentMode
             segmentImageView?.image = content.image
         }
         
-        if style.isWithText() {
+        if style.isWithText {
             segmentTitleLabel?.textAlignment = options.labelTextAlignment
             let defaultState = options.states.defaultState
             segmentTitleLabel?.textColor = defaultState.titleTextColor

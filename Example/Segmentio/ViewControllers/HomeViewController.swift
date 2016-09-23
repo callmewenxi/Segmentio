@@ -11,14 +11,10 @@ import Segmentio
 
 class HomeViewController: UIViewController {
     
-    fileprivate var currentStyle = SegmentioStyle.OnlyImage
+    fileprivate var currentStyle = Style.onlyImage
     fileprivate var containerViewController: EmbedContainerViewController?
     
     // MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return true

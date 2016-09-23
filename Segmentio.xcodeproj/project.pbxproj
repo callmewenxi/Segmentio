@@ -18,6 +18,8 @@
 		324B605E1D33E5200050B083 /* UIView+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324B60541D33E5200050B083 /* UIView+Appearance.swift */; };
 		324B605F1D33E5200050B083 /* Segmentio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324B60551D33E5200050B083 /* Segmentio.swift */; };
 		324B60601D33E5200050B083 /* SegmentioOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324B60561D33E5200050B083 /* SegmentioOptions.swift */; };
+		C5EDD5991D9508C100CC87EB /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EDD5971D9508C100CC87EB /* Points.swift */; };
+		C5EDD59A1D9508C100CC87EB /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EDD5981D9508C100CC87EB /* Context.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		324B60541D33E5200050B083 /* UIView+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Appearance.swift"; sourceTree = "<group>"; };
 		324B60551D33E5200050B083 /* Segmentio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segmentio.swift; sourceTree = "<group>"; };
 		324B60561D33E5200050B083 /* SegmentioOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioOptions.swift; sourceTree = "<group>"; };
+		C5EDD5971D9508C100CC87EB /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
+		C5EDD5981D9508C100CC87EB /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +80,12 @@
 		324B604A1D33E5200050B083 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				324B604B1D33E5200050B083 /* Cells */,
-				324B60531D33E5200050B083 /* Extensions */,
+				C5EDD5981D9508C100CC87EB /* Context.swift */,
+				C5EDD5971D9508C100CC87EB /* Points.swift */,
 				324B60551D33E5200050B083 /* Segmentio.swift */,
 				324B60561D33E5200050B083 /* SegmentioOptions.swift */,
+				324B604B1D33E5200050B083 /* Cells */,
+				324B60531D33E5200050B083 /* Extensions */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -193,8 +199,10 @@
 				324B60591D33E5200050B083 /* SegmentioCellWithImageAfterLabel.swift in Sources */,
 				324B605F1D33E5200050B083 /* Segmentio.swift in Sources */,
 				324B60581D33E5200050B083 /* SegmentioCellWithImage.swift in Sources */,
+				C5EDD5991D9508C100CC87EB /* Points.swift in Sources */,
 				324B605A1D33E5200050B083 /* SegmentioCellWithImageBeforeLabel.swift in Sources */,
 				324B605C1D33E5200050B083 /* SegmentioCellWithImageUnderLabel.swift in Sources */,
+				C5EDD59A1D9508C100CC87EB /* Context.swift in Sources */,
 				324B605E1D33E5200050B083 /* UIView+Appearance.swift in Sources */,
 				324B605D1D33E5200050B083 /* SegmentioCellWithLabel.swift in Sources */,
 			);
@@ -245,6 +253,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -283,6 +292,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -302,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yalantismobile.Segmentio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -322,7 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yalantismobile.Segmentio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

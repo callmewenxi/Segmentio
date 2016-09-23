@@ -13,7 +13,7 @@ private let animateDuration: TimeInterval = 0.6
 
 class EmbedContainerViewController: UIViewController {
     
-    var style = SegmentioStyle.OnlyImage
+    var style = Style.onlyImage
     
     fileprivate var currentViewController: UIViewController?
     
@@ -37,7 +37,7 @@ class EmbedContainerViewController: UIViewController {
         controller.didMove(toParentViewController: self)
     }
     
-    fileprivate func controller(_ style: SegmentioStyle) -> ExampleViewController {
+    fileprivate func controller(_ style: Style) -> ExampleViewController {
         let controller = ExampleViewController.create()
         controller.segmentioStyle = style
         controller.view.frame = view.bounds
@@ -72,7 +72,7 @@ class EmbedContainerViewController: UIViewController {
     
     // MARK: - Public functions
     
-    func swapViewControllers(_ style: SegmentioStyle) {
+    func swapViewControllers(_ style: Style) {
         swapCurrentController(controller(style))
     }
     

@@ -11,9 +11,4 @@ struct Disaster {
     var cardName: String?
     var hints: [String]?
     
-    init(cardName: String?, hints: [String]?) {
-        self.cardName = cardName
-        self.hints = hints
-    }
-    
 }

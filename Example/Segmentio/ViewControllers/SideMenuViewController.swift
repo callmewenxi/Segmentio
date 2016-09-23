@@ -9,7 +9,7 @@
 import UIKit
 import Segmentio
 
-typealias SideMenuHandler = ((_ style: SegmentioStyle) -> Void)
+typealias SideMenuHandler = ((_ style: Style) -> Void)
 
 private let animationDuration: TimeInterval = 0.3
 private let selectedCheckboxImage = UIImage(named: "selectedCheckbox")
@@ -23,8 +23,8 @@ class SideMenuViewController: UIViewController {
     @IBOutlet fileprivate weak var menuTableView: UITableView!
     @IBOutlet fileprivate weak var menuTableViewWidthConstraint: NSLayoutConstraint!
     
-    fileprivate var menuItems = SegmentioStyle.allStyles
-    fileprivate var currentStyle = SegmentioStyle.OnlyImage
+    fileprivate var menuItems = Style.allStyles
+    fileprivate var currentStyle: Style = .onlyImage
     
     // MARK: - Lifecycle
     
@@ -43,7 +43,7 @@ class SideMenuViewController: UIViewController {
         return board.instantiateViewController(withIdentifier: String(describing: self)) as! SideMenuViewController
     }
     
-    func showSideMenu(viewController: UIViewController, currentStyle: SegmentioStyle, sideMenuDidHide: SideMenuHandler?) {
+    func showSideMenu(viewController: UIViewController, currentStyle: Style, sideMenuDidHide: SideMenuHandler?) {
         self.currentStyle = currentStyle
         self.sideMenuDidHide = sideMenuDidHide
         self.modalPresentationStyle = .overCurrentContext
@@ -84,7 +84,7 @@ class SideMenuViewController: UIViewController {
     }
     
     fileprivate func didSelectItemAtIndexPath(_ indexPath: IndexPath) {
-        currentStyle = SegmentioStyle.allStyles[(indexPath as NSIndexPath).row]
+        currentStyle = Style.allStyles[indexPath.row]
         dissmisSideMenu()
     }
     
@@ -165,6 +165,7 @@ extension SideMenuViewController: UITableViewDelegate {
 }
 
 extension SideMenuViewController: UIGestureRecognizerDelegate {
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
